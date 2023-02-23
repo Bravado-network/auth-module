@@ -3,8 +3,9 @@ That version is patched by:
 2. Cookie strategy looks only for cookie existance to send an auth request, instead of token check + cookie in main repo (probably bug)
 
 Release:
-- yarn bump-next
+- yarn bump-next && yarn build
 - push
+- create new release https://github.com/Bravado-network/auth-module/releases
 
 ===================
 <h1 align="center" >🔑 Auth Module</h1>

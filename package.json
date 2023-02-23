@@ -33,10 +33,10 @@
     "heroku-postbuild": "nuxt build demo",
     "lint": "eslint --ext .ts,.js,.vue . && prettier --check .",
     "lint-fix": "eslint --ext .ts,.js,.vue --fix . && prettier --write .",
+    "prepare": "yarn build",
     "release": "yarn build && standard-version && git push --follow-tags && npm publish",
     "start": "nuxt start demo",
-    "test": "yarn lint && jest",
-    "prepare": "yarn build"
+    "test": "yarn lint && jest"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
