@@ -229,7 +229,8 @@ export class LocalScheme<
       })
       .catch((error) => {
         this.$auth.callOnError(error, { method: 'fetchUser' })
-        return Promise.reject(error)
+        // Patch #1: Do not thorwn reject outside auth module
+        // return Promise.reject(error)
       })
   }
 

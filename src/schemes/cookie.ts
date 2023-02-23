@@ -62,7 +62,9 @@ export class CookieScheme<
   check(): SchemeCheck {
     const response = { valid: false }
 
-    if (!super.check().valid) {
+    // Patch #2: Check if token is required (we don't use it) and skip condition
+    //           otherwise it will always return false
+    if (this.options.token.required && !super.check().valid) {
       return response
     }
 
