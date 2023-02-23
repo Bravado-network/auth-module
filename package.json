@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/auth-next",
-  "version": "5.0.0",
+  "version": "5.0.0-1677153697.9e5efbc",
   "description": "Authentication module for Nuxt.js",
   "repository": "nuxt-community/auth-module",
   "license": "MIT",
@@ -35,7 +35,8 @@
     "lint-fix": "eslint --ext .ts,.js,.vue --fix . && prettier --write .",
     "release": "yarn build && standard-version && git push --follow-tags && npm publish",
     "start": "nuxt start demo",
-    "test": "yarn lint && jest"
+    "test": "yarn lint && jest",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",

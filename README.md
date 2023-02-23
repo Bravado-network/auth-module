@@ -2,6 +2,10 @@ That version is patched by:
 1. If there is an error during fetchUser - it won't thrown outside the module. In our code the error occurred because for unlogged user endpoint returns `false` instead of `{}`
 2. Cookie strategy looks only for cookie existance to send an auth request, instead of token check + cookie in main repo (probably bug)
 
+Release:
+- yarn bump-next
+- push
+
 ===================
 <h1 align="center" >🔑 Auth Module</h1>
 <p align="center">Zero-boilerplate authentication support for Nuxt.js!</p>
