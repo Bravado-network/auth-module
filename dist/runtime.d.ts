@@ -84,6 +84,7 @@ interface CookieSchemeEndpoints extends LocalSchemeEndpoints {
 }
 interface CookieSchemeCookie {
     name: string;
+    httpOnly: boolean;
 }
 interface CookieSchemeOptions extends LocalSchemeOptions {
     endpoints: CookieSchemeEndpoints;

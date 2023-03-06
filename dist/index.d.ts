@@ -105,6 +105,7 @@ export declare class CookieScheme<OptionsT extends CookieSchemeOptions = CookieS
 
 export declare interface CookieSchemeCookie {
     name: string;
+    httpOnly: boolean;
 }
 
 export declare interface CookieSchemeEndpoints extends LocalSchemeEndpoints {

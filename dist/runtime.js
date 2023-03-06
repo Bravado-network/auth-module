@@ -1262,7 +1262,8 @@ class LocalScheme extends BaseScheme {
 const DEFAULTS$3 = {
   name: "cookie",
   cookie: {
-    name: null
+    name: null,
+    httpOnly: false
   },
   token: {
     type: "",
@@ -1290,7 +1291,8 @@ class CookieScheme extends LocalScheme {
     if (this.options.token.required && !super.check().valid) {
       return response;
     }
-    if (this.options.cookie.name) {
+    const processChecking = this.options.cookie.httpOnly ? process.server : true;
+    if (this.options.cookie.name && processChecking) {
       const cookies = this.$auth.$storage.getCookies();
       response.valid = Boolean(cookies[this.options.cookie.name]);
       return response;
