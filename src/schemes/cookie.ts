@@ -14,6 +14,7 @@ export interface CookieSchemeEndpoints extends LocalSchemeEndpoints {
 
 export interface CookieSchemeCookie {
   name: string
+  httpOnly: boolean
 }
 
 export interface CookieSchemeOptions extends LocalSchemeOptions {
@@ -24,7 +25,8 @@ export interface CookieSchemeOptions extends LocalSchemeOptions {
 const DEFAULTS: SchemePartialOptions<CookieSchemeOptions> = {
   name: 'cookie',
   cookie: {
-    name: null
+    name: null,
+    httpOnly: false
   },
   token: {
     type: '',
@@ -68,7 +70,10 @@ export class CookieScheme<
       return response
     }
 
-    if (this.options.cookie.name) {
+    // Patch #3: Check is cookie server-only and we need to send a request
+    const processChecking = this.options.cookie.httpOnly ? process.server : true
+
+    if (this.options.cookie.name && processChecking) {
       const cookies = this.$auth.$storage.getCookies()
       response.valid = Boolean(cookies[this.options.cookie.name])
       return response

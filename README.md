@@ -1,6 +1,7 @@
 That version is patched by:
 1. If there is an error during fetchUser - it won't thrown outside the module. In our code the error occurred because for unlogged user endpoint returns `false` instead of `{}`
 2. Cookie strategy looks only for cookie existance to send an auth request, instead of token check + cookie in main repo (probably bug)
+3. Introduced `httpOnly` option for cookie to skip cheking cookies on client before the request (because cookie is http only and unreadable from client)
 
 Release:
 - yarn bump-next && yarn build
