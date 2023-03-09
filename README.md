@@ -7,7 +7,7 @@ That version is patched by:
 Release:
 - yarn bump-next && yarn build
 - push
-- create new release https://github.com/Bravado-network/auth-module/releases
+- create new release with v from package.json https://github.com/Bravado-network/auth-module/releases
 
 ===================
 <h1 align="center" >🔑 Auth Module</h1>
