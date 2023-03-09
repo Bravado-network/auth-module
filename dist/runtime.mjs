@@ -188,6 +188,9 @@ class Storage {
     if (key[0] === "_") {
       Vue.set(this._state, key, value);
     } else if (this._useVuex) {
+      if (key === "user" && !value) {
+        value = {};
+      }
       this.ctx.store.commit(this.options.vuex.namespace + "/SET", {
         key,
         value
@@ -1222,6 +1225,7 @@ class LocalScheme extends BaseScheme {
       return response;
     }).catch((error) => {
       this.$auth.callOnError(error, { method: "fetchUser" });
+      this.$auth.setUser(false);
     });
   }
   async logout(endpoint = {}) {
