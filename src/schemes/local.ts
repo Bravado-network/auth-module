@@ -231,6 +231,9 @@ export class LocalScheme<
         this.$auth.callOnError(error, { method: 'fetchUser' })
         // Patch #1: Do not thorwn reject outside auth module
         // return Promise.reject(error)
+
+        // Patch #4: set user to false (and then to {} inside) for backward companitibility
+        this.$auth.setUser(false)
       })
   }
 

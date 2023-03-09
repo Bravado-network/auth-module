@@ -144,6 +144,10 @@ export class Storage {
     if (key[0] === '_') {
       Vue.set(this._state, key, value)
     } else if (this._useVuex) {
+      // Patch #4 if user object is false/null - set to empty object for backward compatibility
+      if (key === 'user' && !value) {
+        value = {} as V
+      }
       this.ctx.store.commit(this.options.vuex.namespace + '/SET', {
         key,
         value
