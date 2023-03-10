@@ -579,7 +579,7 @@ export { Storage_2 as Storage }
 
 export declare type StorageOptions = ModuleOptions & {
     initialState: {
-        user: null;
+        user: {};
         loggedIn: boolean;
     };
 };

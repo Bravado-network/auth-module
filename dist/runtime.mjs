@@ -346,7 +346,7 @@ class Auth {
     this._redirectListeners = [];
     this.ctx = ctx;
     this.options = options;
-    const initialState = { user: null, loggedIn: false };
+    const initialState = { user: {}, loggedIn: false };
     const storage = new Storage(ctx, { ...options, ...{ initialState } });
     this.$storage = storage;
     this.$state = storage.state;

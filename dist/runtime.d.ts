@@ -455,7 +455,7 @@ interface Strategy extends SchemeOptions {
 
 declare type StorageOptions = ModuleOptions & {
     initialState: {
-        user: null;
+        user: {};
         loggedIn: boolean;
     };
 };
