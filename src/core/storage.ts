@@ -7,7 +7,8 @@ import { isUnset, isSet, decodeValue, encodeValue, getProp } from '../utils'
 // TODO: Normalize type at module itself
 export type StorageOptions = ModuleOptions & {
   initialState: {
-    user: null
+    // Patch 4
+    user: {}
     loggedIn: boolean
   }
 }

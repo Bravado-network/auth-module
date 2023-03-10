@@ -39,8 +39,9 @@ export class Auth {
     this.ctx = ctx
     this.options = options
 
+    // Patch 4
     // Storage & State
-    const initialState = { user: null, loggedIn: false }
+    const initialState = { user: {}, loggedIn: false }
     const storage = new Storage(ctx, { ...options, ...{ initialState } })
     this.$storage = storage
     this.$state = storage.state
